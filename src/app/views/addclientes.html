@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-xs-8">
+<h1>{{titulo}}</h1>
+</div>
+<div class="col-xs-4" >
+<a style="margin-top: 15px;" [routerLink]="['/clientes']" class="btn btn-lg btn-primary">Volver a lista</a>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="panel panel-primary">
+<div class="panel-heading">
+    <h3 class="panel-title">Clientes</h3>
+ </div>
+	<div class="panel-body">
+
+<form #formCliente="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12" id="form-cliente">
+
+	<label>
+		Dni
+		<span *ngIf="!dni.valid && dni.touched" class="label label-danger">El dni no es correcto</span>
+	</label>
+	<input type="text" #dni="ngModel" name="dni" [(ngModel)]="cliente.dni" class="form-control"/>
+
+	<label>
+		Nombre
+		<span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es obligatorio</span>
+	</label>
+	<input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="cliente.nombre" class="form-control" required />
+
+	<label>
+		Apellidos
+		<span *ngIf="!apellidos.valid && apellidos.touched" class="label label-danger">Los apellidos son obligatorios</span>
+	</label>
+	<input #apellidos="ngModel" name="apellidos" [(ngModel)]="cliente.apellidos" class="form-control" required />
+
+	<label>
+		Telefono
+		<span *ngIf="!telefono.valid && dni.touched" class="label label-danger">El dni no es correcto</span>
+	</label>
+	<input type="text" #telefono="ngModel" name="telefono" [(ngModel)]="cliente.telefono" class="form-control"/>
+
+	<br/>
+	<input type="submit" value="{{titulo}}" [disabled]="!formCliente.form.valid" class="btn btn-success"/>
+</form>
+</div>
+</div>
+</div>
+</div>

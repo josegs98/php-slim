@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-xs-8">
+<h1>{{titulo}}</h1>
+</div>
+<div class="col-xs-4" >
+<a style="margin-top: 15px;" [routerLink]="['/articulos']" class="btn btn-lg btn-primary">Volver a lista</a>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+<div class="panel panel-primary">
+<div class="panel-heading">
+    <h3 class="panel-title">Artículo</h3>
+ </div>
+	<div class="panel-body">
+<form #formArticulo="ngForm" (ngSubmit)="onSubmit()" class="col-lg-12" id="form-producto">
+
+	<label>
+		Nombre
+		<span *ngIf="!nombre.valid && nombre.touched" class="label label-danger">El nombre es obligatorio</span>
+	</label>
+	<input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="articulo.nombre" class="form-control" required />
+
+	<label>
+		Descripción
+		<span *ngIf="!descripcion.valid && descripcion.touched" class="label label-danger">La descripción es obligatorio</span>
+	</label>
+	<textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="articulo.descripcion" class="form-control" required></textarea>
+
+	<label>
+		Precio
+		<span *ngIf="!precio.valid && precio.touched" class="label label-danger">El precio no es correcto</span>
+	</label>
+	<input type="text" #precio="ngModel" name="precio" [(ngModel)]="articulo.precio" class="form-control" required pattern="[0-9]+"/>
+
+	<label>Imagen</label>
+	<!--<div *ngIf="is_edit">
+		<img src="http://localhost/control_api-rest/uploads/{{articulo.imagen}}" width="60"/>
+	</div>-->
+	<input type="file" class="form-control" (change)="fileChangeEvent($event)"/>
+
+	<br/>
+	<input type="submit" value="{{titulo}}" [disabled]="!formArticulo.form.valid" class="btn btn-success"/>
+</form>
+</div>
+</div>
+</div>
+</div>

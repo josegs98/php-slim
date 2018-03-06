@@ -1,0 +1,61 @@
+<section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <!-- Widget: user widget style 1 -->
+                    <div class="box box-widget widget-user-2">
+                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                        <div class="widget-user-header"
+                            style="background-color: #3c8dbc;">
+                            <div class="widget-user-image">
+                                <img class="img-circle" src="assets/dist/img/invoice.png"
+                                    alt="User Avatar" />
+                            </div>
+                           
+                            <!-- /.widget-user-image -->
+                            <h3 class="widget-user-username" style="color: #fff;">
+                                Factura
+                            </h3>
+                            <h5 class="widget-user-desc" style="color: #fff;">
+                                Factura detallada
+                            </h5>
+                        </div>
+                        <div class="box-footer no-padding">
+                            <ul class="nav nav-stacked">
+                                <li><a style="font: 140% sans-serif;"> Codigo: <span>{{factura.idfactura}}</span></a></li>
+                                <li><a style="font: 140% sans-serif;"> Total: <span>{{factura.precio}}€</span></a></li>
+                                <li><a style="font: 140% sans-serif;"> Fecha: <span>{{factura.fecha | date:'dd-MM-yyyy'}}</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="widget-user-header"
+                            style="background-color: #3c8dbc;">
+                            <div class="widget-user-image">
+                                <img class="img-circle" src="assets/dist/img/user.png"
+                                    alt="User Avatar" />
+                            </div>
+                           
+                            <!-- /.widget-user-image -->
+                            <h3 class="widget-user-username" style="color: #fff;">
+                                Datos del cliente en la factura
+                            </h3>
+                            <h5 class="widget-user-desc" style="color: #fff;">
+                                Factura detallada
+                            </h5>
+                        </div>
+                        <div class="box-footer no-padding">
+                                <ul class="nav nav-stacked">
+                                    <li><a style="font: 140% sans-serif;"> Nombre: <span>{{factura.nombre}}</span></a></li>
+                                    <li><a style="font: 140% sans-serif;"> Apellidos: <span>{{factura.apellidos}}</span></a></li>
+                                    <li><a style="font: 140% sans-serif;"> DNI: <span>{{factura.dnicliente}}</span></a></li>
+                                </ul>
+                        </div>
+                    </div>
+                    <!-- /.widget-user -->
+                </div>
+            </div>
+
+            <!-- /.col -->
+        </div>
+    </section>
+    <!-- /.content -->
+

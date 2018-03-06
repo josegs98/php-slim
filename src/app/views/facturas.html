@@ -1,0 +1,39 @@
+<h1>{{titulo}}</h1>
+<form #busqueda="ngForm" (ngSubmit)="busqueda.reset()">
+    <div class="row">
+      <div class="col-md-2">
+        <input type="text" name="valor" [(ngModel)]="busqueda.valor" class="form-control" placeholder="Buscar..." required/>
+      </div>
+      <div class="col-md-1">
+        <button (click)="searchFactura(busqueda.valor)" class="btn btn-primary">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <br/>
+<div class="panel panel-default">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Precio</th>
+        <th>DNI Cliente</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let factura of facturaslistar; let i=index">
+      <tr>
+        <td>{{factura.idfactura}}</td>
+        <td>{{factura.precio}}€</td>
+        <td>{{factura.dnicliente}}</td>
+        <td>{{factura.fecha | date:'dd-MM-yyyy'}}</td>
+        <td>
+          <a class="btn btn-xs btn-primary" [routerLink]="['/fichafactura', factura.idfactura]">
+            <span class="glyphicon glyphicon-eye-open"></span>
+          </a>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

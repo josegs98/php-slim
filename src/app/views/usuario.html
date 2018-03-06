@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-xs-8">
+<h1>{{titulo}}</h1>
+</div>
+<div class="col-xs-4" >
+<a style="margin-top: 15px;" [routerLink]="['/addusuario']" class="btn btn-lg btn-primary">Nuevo usuario</a>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+	<div class="col-md-6 col-md-offset-2">
+		<!-- Widget: user widget style 1 -->
+		<div class="box box-widget widget-user-2">
+			<!-- Add the bg color to the header using any of the bg-* classes -->
+			<div class="widget-user-header"
+				style="background-color: #3c8dbc;">
+				<div class="widget-user-image">
+					            <img *ngIf="!usuario.image"
+                src="assets/dist/img/user1-128x128.png" class="img-circle"
+                 /> <img *ngIf="usuario.image" src="http://localhost/control_api-rest/uploads/{{usuario.image}}"  class="img-circle" />
+				</div>
+				<!-- /.widget-user-image -->
+				<h3 class="widget-user-username" style="color: #fff;">
+					Información 
+				</h3>
+				<h5 class="widget-user-desc" style="color: #fff;">
+					usuario	</h5>
+			</div>
+			<div class="box-footer no-padding">
+				<ul class="nav nav-stacked">
+					<li><a style="font: 140% sans-serif;"> Dni: {{usuario.dni}}</a></li>
+
+					<li><a style="font: 140% sans-serif;"> Nombre: {{usuario.nombre}}</a></li>
+
+					<li><a style="font: 140% sans-serif;"> Apellidos: {{usuario.apellidos}}</a></li>
+
+					<li><a style="font: 140% sans-serif;"> Email: {{usuario.email}}</a></li>
+
+				</ul>
+			</div>
+		</div>
+		<a  [routerLink]="['/addusuario', usuario.idusuario]">
+			<button type="button" class="btn btn-block btn-warning">Editar</button>
+		</a> <br /> 
+
+			<button type="button" class="btn btn-block btn-danger" data-toggle="modal" data-target="#modal-danger" >Eliminar</button>	
+		
+		<!-- /.widget-user -->
+	</div>
+	<div class="col-md-3">
+		<!-- Widget: user widget style 1 -->
+		<div class="box box-widget widget-user-2">
+			<!-- Add the bg color to the header using any of the bg-* classes -->
+			<div class="widget-user-header"
+				style="background-color: #3c8dbc;">
+				<div class="widget-user-image">
+					<img class="img-circle" src="assets/dist/img/access.png"
+						alt="User Avatar" />
+				</div>
+				<!-- /.widget-user-image -->
+				<h3 class="widget-user-username" style="color: #fff;">
+					Datos de acceso</h3>
+
+			</div>
+			<div class="box-footer no-padding">
+				<ul class="nav nav-stacked">
+
+					<li><a style="font: 140% sans-serif;"> Permisos: {{usuario.rol}}</a></li>
+
+					<!--<li><a style="font: 140% sans-serif;"> Acceso: {{estado}}</a></li>-->
+
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
